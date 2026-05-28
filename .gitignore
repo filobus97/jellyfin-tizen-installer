@@ -1,0 +1,15 @@
+# Certificates and private keys
+certs/
+
+# Environment variables (may contain secrets)
+.env
+.env.*
+
+# Docker build artifacts
+*.tar
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

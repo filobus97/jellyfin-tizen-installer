@@ -1,0 +1,35 @@
+services:
+  jellyfin-tizen:
+    container_name: jellyfin-tizen
+    build:
+      context: .
+      args:
+        USER: developer # Name of the user in the container, do not change (used to correctly point author.p12 file) or modify profiles-template.xml accordingly
+        TIZEN_STUDIO_VERSION: ${TIZEN_STUDIO_VERSION:-5.5} # Having problems with 6.0
+        LANG: ${LANG}
+        LANGUAGE: ${LANGUAGE}
+        LC_ALL: ${LC_ALL}
+    image: jellyfin-tizen
+    network_mode: bridge
+    ports:
+      - "26099:26099" # sdb server
+    environment:
+      LANG: ${LANG}
+      LANGUAGE: ${LANGUAGE}
+      LC_ALL: ${LC_ALL}
+      TZ: ${TZ}
+      TV_IP: ${TV_IP}
+      CERT_PASSWORD: ${CERT_PASSWORD}
+      JELLYFIN_TIZEN_RELEASE: ${JELLYFIN_TIZEN_RELEASE:-master}
+      JELLYFIN_WEB_RELEASE: ${JELLYFIN_WEB_RELEASE:-release-10.10.z}
+    # volumes: # Optional volume to retain the result of the build for future manual installation
+    #   - /path/to/jellyfin-build-result:/result
+    deploy:
+      resources:
+        limits:
+          #          cpus: "2.0" # Only use if you want to limit cpu usage.
+          memory: 4G
+    ulimits:
+      nofile:
+        soft: 122880
+        hard: 122880

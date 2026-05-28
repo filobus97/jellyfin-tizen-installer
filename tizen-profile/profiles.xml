@@ -1,0 +1,7 @@
+<profiles active="profile" version="3.1">
+  <profile name="profile">
+    <profileitem ca="" distributor="0" key="/home/developer/tizen-studio-data/keystore/author/author.p12" password="${CERT_PASSWORD}" rootca=""/>
+    <profileitem ca="" distributor="1" key="/home/developer/tizen-studio-data/keystore/distributor/distributor.p12" password="${CERT_PASSWORD}" rootca=""/>
+    <profileitem ca="" distributor="2" key="" password="" rootca=""/>
+  </profile>
+</profiles>
