@@ -118,7 +118,7 @@ The Dockerfile uses `ubuntu:latest` and `npm@latest` intentionally — no mainte
 |---|---|---|
 | Ubuntu base image | 24.04 LTS (Noble Numbat) | `FROM ubuntu:24.04` |
 | Node.js (via NodeSource LTS) | v22.x | `setup_22.x` in the `curl \| bash` line |
-| npm | latest at build time | `npm install -g npm@10` (check `npm --version` in a container) |
+| npm | 10.x | `npm install -g npm@10` in the Dockerfile — jellyfin-web ≥10.11.z requires `<11.0.0` |
 | Tizen Studio | 5.5 | `TIZEN_STUDIO_VERSION=5.5` in `.env` (already pinned) |
 
 ---

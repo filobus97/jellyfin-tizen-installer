@@ -67,7 +67,7 @@ ENV PATH $PATH:/tizen-studio/tools/:/tizen-studio/tools/ide/bin/:/tizen-studio/p
 # Install Node.js and npm using NodeSource
 RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     apt-get install -y nodejs && \
-    npm install -g npm@latest
+    npm install -g npm@10
 
 # Copy the scripts
 COPY entrypoint.sh /entrypoint.sh
